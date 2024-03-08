@@ -26,17 +26,17 @@ const TabsComponent = ({ coins }) => {
     <div className='mx-7'>
       <TabContext value={value}>
         <TabList onChange={handleChange} variant='fullWidth'>
-          <Tab label='Grid' value='grid' sx={style} />
-          <Tab label='List' value='list' sx={style} />
+          <Tab label='Coins' value='grid' sx={style} />
+          {/* <Tab label='List' value='list' sx={style} /> */}
         </TabList>
         <TabPanel value='grid'>
-          <div className='flex justify-center items-center flex-wrap gap-4 my-2 -mx-12'>
+          <div className='flex justify-center items-center flex-wrap gap-4 my-2 sm:-mx-12 -mx-6'>
             {coins?.map((coin, i) => {
               return <Grid key={i} coin={coin} />;
             })}
           </div>
         </TabPanel>
-        <TabPanel value='list'>List</TabPanel>
+        {/* <TabPanel value='list'>List</TabPanel> */}
       </TabContext>
     </div>
   );
