@@ -36,7 +36,7 @@ const MainComponent = () => {
           Real Time.
         </motion.h1>
         <motion.p
-          className='text-[1rem] text-[#888]'
+          className='text-[1rem] pl-1 text-[#888]'
           initial={{ opacity: 0, x: -100 }}
           animate={{
             opacity: 1,
