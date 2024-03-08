@@ -4,7 +4,7 @@ import AnchorTemporaryDrawer from "./drawer";
 const Header = () => {
   return (
     <div className='flex justify-between items-center py-6 px-12 bg-[#111] sticky top-0 left-0 z-50'>
-      <h1 className=''>
+      <h1 className=''>          
         Crypto Dashboard<span className='text-[#f3993a]'>.</span>
       </h1>
       <div className='sm:flex hidden justify-end items-center gap-6 '>
