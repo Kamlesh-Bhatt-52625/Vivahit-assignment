@@ -61,26 +61,26 @@ const List = ({ coindata }) => {
       </Tooltip>
 
       <Tooltip title='Coin Total Volume' placement='bottom-end'>
-        <td className='md:flex hidden mt-3 pt-1 text-[#888]'>
+        <p className='md:flex hidden mt-3 pt-1 text-[#888]'>
           {coindata.total_volume.toLocaleString()}
-        </td>
+        </p>
       </Tooltip>
       <Tooltip title='Coin Market Capital' placement='bottom-end'>
-        <td className='md:flex hidden mt-3 pt-1 text-[#888]'>
+        <p className='md:flex hidden mt-3 pt-1 text-[#888]'>
           ${coindata.market_cap.toLocaleString()}
-        </td>
+        </p>
       </Tooltip>
 
       {/* For medium devices */}
       <Tooltip title='Coin Total Volume' placement='bottom-end'>
-        <td className='md:hidden flex mt-3 pt-1 text-[#888]'>
+        <p className='md:hidden flex mt-3 pt-1 text-[#888]'>
           {convertNumber(coindata.total_volume)}
-        </td>
+        </p>
       </Tooltip>
       <Tooltip title='Coin Market Capital' placement='bottom-end'>
-        <td className='md:hidden flex mt-3 pt-1 text-[#888]'>
+        <p className='md:hidden flex mt-3 pt-1 text-[#888]'>
           ${convertNumber(coindata.market_cap)}
-        </td>
+        </p>
       </Tooltip>
     </div>
   );
