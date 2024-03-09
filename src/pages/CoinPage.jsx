@@ -8,6 +8,9 @@ import { getCoinData } from "../functions/getCoinData";
 import { getCoinPrices } from "../functions/getCoinPrices";
 import LineChart from "../components/Coin/LineChart";
 import { convertDate } from "../functions/convertDate";
+import Header from "../components/Common/Header";
+import SelectDays from "../components/Coin/SelectDays";
+import { settingChartData } from "../functions/settingChartData";
 
 const CoinPage = () => {
   const { id } = useParams();
@@ -48,8 +51,20 @@ const CoinPage = () => {
     }
   };
 
+  const handleDaysChange = async (event) => {
+    setIsLoading(true);
+    setDays(event.target.value);
+    const prices = await getCoinPrices(id, event.target.value);
+    if (prices.length > 0) {
+      settingChartData(setChartData, prices);
+
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className=''>
+      <Header />
       {isLoading ? (
         <Loader />
       ) : (
@@ -57,7 +72,8 @@ const CoinPage = () => {
           <div className=''>
             <List coindata={coinData} />
           </div>
-          <div className='block w-[90%] bg-[#1b1b1b] my-6 mx-auto rounded-lg'>
+          <div className='block w-[90%] bg-[#1b1b1b] my-6 mx-auto rounded-lg px-4 py-4'>
+            <SelectDays days={days} handleDaysChange={handleDaysChange} />
             <LineChart chartData={chartData} />
           </div>
           <CoinInfo heading={coinData.name} desc={coinData.desc} />

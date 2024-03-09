@@ -6,7 +6,7 @@ const CoinInfo = ({ heading, desc }) => {
   const longDesc =
     desc + "<span style='color:var(--grey)'> Read Less...</span>";
 
-  const [flag, setFlag] = useState(false);
+  const [flag, setFlag] = useState(true);
 
   return (
     <div className='block w-[90%] bg-[#1b1b1b] my-6 mx-auto rounded-xl py-0 px-2'>
