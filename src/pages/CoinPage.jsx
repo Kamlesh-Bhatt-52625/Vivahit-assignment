@@ -25,14 +25,14 @@ const CoinPage = () => {
     if (id) {
       fetchCoinData();
     }
-  }, [id, days]);
+  }, [id, days, priceType]);
 
   const fetchCoinData = async () => {
     const data = await getCoinData(id);
     if (data) {
       coinObject(setCoinData, data);
       const prices = await getCoinPrices(id, days, priceType);
-      if (prices.length > 0) {
+      if (prices?.length > 0) {
         // console.log(prices);
         settingChartData(setChartData, prices);
         setIsLoading(false);
@@ -55,9 +55,8 @@ const CoinPage = () => {
     setIsLoading(true);
     setPriceType(newType);
     const prices = await getCoinPrices(id, days, newType);
-    if (prices.length > 0) {
+    if (prices?.length > 0) {
       settingChartData(setChartData, prices);
-
       setIsLoading(false);
     }
   };
@@ -78,7 +77,7 @@ const CoinPage = () => {
               priceType={priceType}
               handlePriceTypeChange={handlePriceTypeChange}
             />
-            <LineChart chartData={chartData} />
+            <LineChart chartData={chartData} priceType={priceType} />
           </div>
           <CoinInfo heading={coinData.name} desc={coinData.desc} />
         </>

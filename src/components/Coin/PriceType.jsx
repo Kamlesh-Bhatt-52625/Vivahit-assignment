@@ -3,7 +3,7 @@ import { useState } from "react";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
-export default function PriceType({priceType, handlePriceTypeChange}) {
+export default function PriceType({ priceType, handlePriceTypeChange }) {
   return (
     <div className='flex items-center justify-center m-4'>
       <ToggleButtonGroup
@@ -24,17 +24,20 @@ export default function PriceType({priceType, handlePriceTypeChange}) {
         }}>
         <ToggleButton
           value='prices'
-          className='md:text-[1rem] md:p-3 sm:text-[0.7rem] sm:p-2 text-[0.5rem] p-1'>
+          className='md:text-[1rem] md:p-3 sm:text-[0.7rem] sm:p-2 text-[0.5rem] p-1'
+          disabled={priceType === "prices"}>
           Price
         </ToggleButton>
         <ToggleButton
           value='market_caps'
-          className='md:text-[1rem] md:p-3 sm:text-[0.7rem] sm:p-2 text-[0.5rem] p-1'>
+          className='md:text-[1rem] md:p-3 sm:text-[0.7rem] sm:p-2 text-[0.5rem] p-1'
+          disabled={priceType === "market_caps"}>
           Market Cap
         </ToggleButton>
         <ToggleButton
           value='total_volumes'
-          className='md:text-[1rem] md:p-3 sm:text-[0.7rem] sm:p-2 text-[0.5rem] p-1'>
+          className='md:text-[1rem] md:p-3 sm:text-[0.7rem] sm:p-2 text-[0.5rem] p-1'
+          disabled={priceType === "total_volumes"}>
           Total Volume
         </ToggleButton>
       </ToggleButtonGroup>
