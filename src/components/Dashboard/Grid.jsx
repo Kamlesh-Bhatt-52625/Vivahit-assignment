@@ -1,5 +1,6 @@
 import TrendingUpRoundedIcon from "@mui/icons-material/TrendingUpRounded";
 import TrendingDownRoundedIcon from "@mui/icons-material/TrendingDownRounded";
+import { Link } from "react-router-dom";
 
 const Grid = ({ coin }) => {
   return (
@@ -43,7 +44,10 @@ const Grid = ({ coin }) => {
         <h3
           className='text-[#61c96f] text-lg font-semibold'
           style={{
-            color: coin.price_change_percentage_24h < 0 ? "#f94141" : "61c96f",
+            color:
+              coin.price_change_percentage_24h < 0
+                ? "#f94141"
+                : "#61c96f !important",
           }}>
           ${coin.current_price.toLocaleString("us")}
         </h3>

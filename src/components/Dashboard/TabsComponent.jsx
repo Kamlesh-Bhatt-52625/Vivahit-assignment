@@ -5,6 +5,8 @@ import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import "./tabsComponent.css";
 import Grid from "./Grid";
+import Loader from "../Common/Loader/Loader";
+import { Link } from "react-router-dom";
 
 const TabsComponent = ({ loading, coins }) => {
   const [value, setValue] = useState("grid");
@@ -31,13 +33,15 @@ const TabsComponent = ({ loading, coins }) => {
         </TabList>
         <TabPanel value='grid'>
           {loading ? (
-            <h2 className='flex text-3xl text-[#888] justify-center items-center'>
-              Loading...
-            </h2>
+            <Loader />
           ) : (
             <div className='flex justify-center items-center flex-wrap gap-4 my-2 sm:-mx-12 -mx-6'>
               {coins?.map((coin, i) => {
-                return <Grid key={i} coin={coin} />;
+                return (
+                  <Link key={i} to={`/coin/${coin.id}`}>
+                    <Grid coin={coin} />{" "}
+                  </Link>
+                );
               })}
             </div>
           )}
