@@ -6,7 +6,7 @@ import TabPanel from "@mui/lab/TabPanel";
 import "./tabsComponent.css";
 import Grid from "./Grid";
 
-const TabsComponent = ({ coins }) => {
+const TabsComponent = ({ loading, coins }) => {
   const [value, setValue] = useState("grid");
 
   const handleChange = (event, newValue) => {
@@ -30,11 +30,17 @@ const TabsComponent = ({ coins }) => {
           {/* <Tab label='List' value='list' sx={style} /> */}
         </TabList>
         <TabPanel value='grid'>
-          <div className='flex justify-center items-center flex-wrap gap-4 my-2 sm:-mx-12 -mx-6'>
-            {coins?.map((coin, i) => {
-              return <Grid key={i} coin={coin} />;
-            })}
-          </div>
+          {loading ? (
+            <h2 className='flex text-3xl text-[#888] justify-center items-center'>
+              Loading...
+            </h2>
+          ) : (
+            <div className='flex justify-center items-center flex-wrap gap-4 my-2 sm:-mx-12 -mx-6'>
+              {coins?.map((coin, i) => {
+                return <Grid key={i} coin={coin} />;
+              })}
+            </div>
+          )}
         </TabPanel>
         {/* <TabPanel value='list'>List</TabPanel> */}
       </TabContext>
