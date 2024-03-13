@@ -10,7 +10,7 @@ A cryptocurrency dashboard built with Vite, React, Tailwind CSS, Material-UI, Ch
 - **Time Range Selection:** View data for 7 days, 30 days, 60 days, 90 days, 120 days, and a year.
 - **Responsive Design:** Seamlessly experience the dashboard on various devices.
 - **Modern Technologies:** Built with Vite, React, Tailwind CSS, Material-UI, Chart.js, and Framer Motion.
-- [Add any additional features]
+
 
 ## Technologies Used
 
